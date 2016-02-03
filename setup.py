@@ -31,11 +31,11 @@
 A Django app that supports automatic generation and tracking of bit.ly hashes for objects on the site. Will automatically track changes to URLs, and, if necessary, maintain redirects for moved objects.
 """
 
-from distutils.core import setup
+from setuptools import setup
 
 
 description, long_description = __doc__.split('\n\n', 1)
-VERSION = '1.0.0'
+VERSION = '2.0.0'
 
 setup(
     name='django-bitly',
@@ -61,5 +61,5 @@ setup(
         'django_bitly.templatetags',
     ],
     provides=['django_bitly'],
-    install_requires=['django>=1.3', 'six'],
+    install_requires=['django>=1.7', 'six'],
 )
