@@ -4,3 +4,4 @@ syntax:glob
 migrations
 local_settings.py
 notes.txt
+.idea/
