@@ -59,6 +59,7 @@ setup(
     packages=[
         'django_bitly',
         'django_bitly.templatetags',
+        'django_bitly.migrations',
     ],
     provides=['django_bitly'],
     install_requires=['django>=1.7', 'six'],
