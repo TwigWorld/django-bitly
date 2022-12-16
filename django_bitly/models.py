@@ -224,6 +224,5 @@ class Bittle(models.Model):
         return referrer_list
     referrers = property(_get_referrers)
 
-    # @models.permalink
     def get_absolute_url(self):
-        return reverse('bittle', [self.id])
+        return reverse('bittle', args=[self.id])
