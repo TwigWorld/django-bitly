@@ -35,7 +35,7 @@ from distutils.core import setup
 
 
 description, long_description = __doc__.split('\n\n', 1)
-VERSION = '2.0.0'
+VERSION = '2.0.1'
 
 setup(
     name='django-bitly',

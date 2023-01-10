@@ -12,6 +12,7 @@ except ImportError:
     from datetime import datetime
 
 from django.db import models
+from django.urls import reverse
 from django.contrib.sites.models import Site
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
@@ -158,7 +159,7 @@ class BittleManager(models.Manager):
 
 class Bittle(models.Model):
     """An object representing a Bit.ly link to a local object."""
-    content_type = models.ForeignKey(ContentType)
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
     object_id = models.PositiveIntegerField()
     content_object = GenericForeignKey('content_type', 'object_id')
     absolute_url = models.URLField()
@@ -223,6 +224,5 @@ class Bittle(models.Model):
         return referrer_list
     referrers = property(_get_referrers)
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('bittle', [self.id])
+        return reverse('bittle', args=[self.id])
